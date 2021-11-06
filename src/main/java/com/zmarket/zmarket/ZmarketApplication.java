@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ZmarketApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ZmarketApplication.class, args);
+		SpringApplication.run(ZmarketApplication.class, args);	//main
 	}
 
 }
