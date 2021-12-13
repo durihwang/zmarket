@@ -1,6 +1,6 @@
 package com.zmarket.zmarket.controller;
 
-import com.zmarket.zmarket.config.auth.dto.SessionUser;
+import com.zmarket.zmarket.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

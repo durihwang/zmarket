@@ -1,4 +1,4 @@
-package com.zmarket.zmarket.config.auth.dto;
+package com.zmarket.zmarket.dto;
 
 import com.zmarket.zmarket.domain.User;
 import lombok.Getter;

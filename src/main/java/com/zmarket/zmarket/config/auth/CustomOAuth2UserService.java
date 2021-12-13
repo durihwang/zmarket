@@ -1,7 +1,7 @@
 package com.zmarket.zmarket.config.auth;
 
-import com.zmarket.zmarket.config.auth.dto.OAuthAttributes;
-import com.zmarket.zmarket.config.auth.dto.SessionUser;
+import com.zmarket.zmarket.dto.OAuthAttributes;
+import com.zmarket.zmarket.dto.SessionUser;
 import com.zmarket.zmarket.domain.User;
 import com.zmarket.zmarket.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
