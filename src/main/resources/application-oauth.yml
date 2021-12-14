@@ -7,3 +7,17 @@ spring:
             client-id: 940193236635-fdj6gk65pc0d1o1g9m6d8j35h4hfvv2b.apps.googleusercontent.com
             client-secret: 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
             scope: profile, email
+          kakao:
+            client-id: c253dd02cc022584a8011b23654e1d22
+#            redirect-uri: "{baseUrl}/{action}/oauth2/code/{registrationId}"
+            redirect-uri: http://localhost:8080/login/oauth2/code/kakao
+            client-authentication-method: POST
+            authorization-grant-type: authorization_code
+            scope: profile_nickname, profile_image, account_email
+            client-name: Kakao
+        provider:
+          kakao:
+            authorization_uri: https://kauth.kakao.com/oauth/authorize
+            token_uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            user_name_attribute: id
