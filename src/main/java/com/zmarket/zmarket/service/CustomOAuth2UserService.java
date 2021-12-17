@@ -1,4 +1,4 @@
-package com.zmarket.zmarket.config.auth;
+package com.zmarket.zmarket.service;
 
 import com.zmarket.zmarket.dto.OAuthAttributes;
 import com.zmarket.zmarket.dto.SessionUser;
@@ -50,6 +50,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         User user = userRepository.findByEmail(attributes.getEmail())
                 .map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
                 .orElse(attributes.toEntity());
+        System.out.println("repository");
         return userRepository.save(user);
     }
 }

@@ -1,6 +1,7 @@
 package com.zmarket.zmarket.config.auth;
 
 import com.zmarket.zmarket.domain.Role;
+import com.zmarket.zmarket.service.CustomOAuth2UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
