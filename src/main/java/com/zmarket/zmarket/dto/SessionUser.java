@@ -1,6 +1,6 @@
 package com.zmarket.zmarket.dto;
 
-import com.zmarket.zmarket.domain.User;
+import com.zmarket.zmarket.domain.SocialUser;
 import lombok.Getter;
 
 import java.io.Serializable;
@@ -12,7 +12,7 @@ public class SessionUser implements Serializable {
     private String email;
     private String picture;
 
-    public SessionUser(User user){
+    public SessionUser(SocialUser user){
         this.name = user.getName();
         this.email = user.getEmail();
         this.picture = user.getPicture();

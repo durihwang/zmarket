@@ -1,7 +1,10 @@
 package com.zmarket.zmarket.controller;
 
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.zmarket.zmarket.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,5 +28,10 @@ public class IndexController {
         }
 
         return "index";
+    }
+
+    @GetMapping("/vuetify")
+    public ResponseEntity vuetify() {
+        return new ResponseEntity("success", HttpStatus.OK);
     }
 }

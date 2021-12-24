@@ -2,7 +2,7 @@ package com.zmarket.zmarket.service;
 
 import com.zmarket.zmarket.dto.OAuthAttributes;
 import com.zmarket.zmarket.dto.SessionUser;
-import com.zmarket.zmarket.domain.User;
+import com.zmarket.zmarket.domain.SocialUser;
 import com.zmarket.zmarket.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -37,7 +37,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
         // OAuth2UserService
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
-        User user = saveOrUpdate(attributes);
+        SocialUser user = saveOrUpdate(attributes);
         httpSession.setAttribute("user", new SessionUser(user)); // SessionUser (직렬화된 dto 클래스 사용)
 
         return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),
@@ -46,8 +46,8 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
     }
 
     // 유저 생성 및 수정 서비스 로직
-    private User saveOrUpdate(OAuthAttributes attributes){
-        User user = userRepository.findByEmail(attributes.getEmail())
+    private SocialUser saveOrUpdate(OAuthAttributes attributes){
+        SocialUser user = userRepository.findByEmail(attributes.getEmail())
                 .map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
                 .orElse(attributes.toEntity());
         System.out.println("repository");

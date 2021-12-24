@@ -1,7 +1,7 @@
 package com.zmarket.zmarket.dto;
 
 import com.zmarket.zmarket.domain.Role;
-import com.zmarket.zmarket.domain.User;
+import com.zmarket.zmarket.domain.SocialUser;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -78,8 +78,8 @@ public class OAuthAttributes {
                 .build();
     }
 
-    public User toEntity(){
-        return User.builder()
+    public SocialUser toEntity(){
+        return SocialUser.builder()
                 .name(name)
                 .email(email)
                 .picture(picture)
